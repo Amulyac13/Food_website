@@ -12,6 +12,7 @@ const MyOrders = () => {
     const fetchOrders=async()=>{
         const response=await axios.post(url+"/api/order/userorders",{},{headers:{token}});
         setData(response.data.data);
+        console.log(response.data.data);
     }
 
     useEffect(()=>{
@@ -38,11 +39,11 @@ const MyOrders = () => {
                     })}</p>
                     <p>₹{order.amount}.00</p>
                     <p>Items : {order.items.length}</p>
-                    <p><span>&#x25cf;</span> <b>{}order.status</b></p>
-                    <button>Track order</button>
+                    <p><span>&#x25cf;</span> <b>{order.status}</b></p>
+                    <button onClick={fetchOrders}>Track order</button>
                 </div>
             )
-        })}
+    })}
       </div>
     </div>
   )
