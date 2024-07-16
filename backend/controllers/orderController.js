@@ -8,7 +8,7 @@ const stripe=new Stripe(process.env.STRIPE_SECRET_KEY)
 const placeOrder=async(req,res)=>{
     // 5174
     console.log(req.body.data)
-    const frontend_url="https://food-website-frontend.vercel.app/"
+    const frontend_url="https://food-website-frontend.vercel.app"
     try {
         const newOrder=new orderModel({
             userId:req.body.userId,
