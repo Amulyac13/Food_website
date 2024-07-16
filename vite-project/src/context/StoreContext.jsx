@@ -5,7 +5,7 @@ export const StoreContext=createContext(null)
 const StoreContextProvider=(props)=>{
 
     const [cartItems,setCartItems]=useState({})
-    const url=import.meta.env.URL || "http://localhost:4000"
+    const url=import.meta.env.URL || "https://food-del-backend-0xa6.onrender.com"
 
     // to save the token we use a state variable.
     const [token,setToken]=useState("");
